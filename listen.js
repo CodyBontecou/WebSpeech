@@ -21,7 +21,7 @@ if (typeof SpeechRecognition !== "undefined") {
         recognition.start();
         button.textContent = "Stop listening";
         listening = true;
-        speak("Now listening")
+        setTimeout(speak, 1000, "Now listening")
     };
 
     const onResult = event => {
