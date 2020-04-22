@@ -61,5 +61,5 @@ function speak(toSay) {
 
 form.addEventListener('submit', event => {
     event.preventDefault();
-    speak("Hello World")
+    speak("Stopped listening")
 });
