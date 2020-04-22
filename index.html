@@ -22,7 +22,7 @@
     <form class="input" id="voice-form">
         <div class="field">
             <label for="speech">Type something</label>
-            <input type="text" name="speech" id="speech" required />
+            <input type="text" name="speech" id="speech" />
         </div>
         <div class="field">
             <label for="voices">Choose a voice</label>
@@ -129,9 +129,7 @@
             currentVoice = voices[selectedIndex];
         });
 
-        form.addEventListener('submit', event => {
-            event.preventDefault();
-            const toSay = input.value.trim();
+        function speak(toSay) {
             const utterance = new SpeechSynthesisUtterance(toSay);
             utterance.voice = currentVoice;
             utterance.addEventListener('start', event => {
@@ -150,6 +148,11 @@
             });
             speechSynthesis.speak(utterance);
             input.value = '';
+        }
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            speak("Hello World")
         });
 
     });
