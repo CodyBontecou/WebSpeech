@@ -88,3 +88,40 @@ footer {
     border-top: 1px solid #0d122b;
     text-align: center;
 }
+main.speaking {
+    animation: bg-pulse 1.5s alternate ease-in-out infinite;
+}
+.input {
+    text-align: center;
+    width: 100%;
+}
+label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 1em;
+}
+.field {
+    margin-bottom: 2em;
+}
+input {
+    font-size: 24px;
+    padding: 0.5em;
+    border: 1px solid rgba(13, 18, 43, 0.25);
+    border-radius: 6px;
+    width: 75%;
+    display: inline-block;
+    transition: border-color 0.25s;
+    text-align: center;
+}
+input:focus,
+select:focus {
+    border-color: rgba(13, 18, 43, 1);
+}
+select {
+    width: 75%;
+    font-size: 24px;
+    padding: 0.5em;
+    border: 1px solid rgba(13, 18, 43, 0.25);
+    border-radius: 6px;
+    transition: border-color 0.25s;
+}
