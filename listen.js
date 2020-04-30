@@ -25,20 +25,27 @@ if (typeof SpeechRecognition !== "undefined") {
     };
 
     const onResult = event => {
+        const last = event.results.length - 1;
+        const word = event.results[last][0].transcript.toLowerCase();
+        const text = document.createTextNode(word);
+        const p = document.createElement("p");
+        p.classList.add("final");
         result.innerHTML = "";
-        for (const res of event.results) {
-            const text = document.createTextNode(res[0].transcript);
-            const p = document.createElement("p");
-            if (res.isFinal) {
-                p.classList.add("final");
-            }
-            p.appendChild(text);
-            result.appendChild(p);
-
-            if (res[0].transcript.includes("stop")) {
-                stop()
-            }
-        }
+        p.appendChild(text);
+        result.appendChild(p);
+        // for (const res of event.results) {
+        //     const text = document.createTextNode(res[0].transcript);
+        //     const p = document.createElement("p");
+        //     if (res.isFinal) {
+        //         p.classList.add("final");
+        //     }
+        //     p.appendChild(text);
+        //     result.appendChild(p);
+        //
+        //     if (res[0].transcript.includes("stop")) {
+        //         stop()
+        //     }
+        // }
     };
     recognition.continuous = true;
     recognition.interimResults = true;
