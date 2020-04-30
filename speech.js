@@ -61,5 +61,6 @@ function speak(toSay) {
 
 form.addEventListener('submit', event => {
     event.preventDefault();
-    speak("Stopped listening")
+    const toSay = input.value.trim();
+    speak(toSay)
 });
