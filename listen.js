@@ -42,7 +42,8 @@ if (typeof SpeechRecognition !== "undefined") {
     };
     recognition.continuous = true;
     recognition.interimResults = true;
-    recognition.addEventListener("result", onResult);
+    recognition.onresult = onResult
+    // recognition.addEventListener("result", onResult);
     button.addEventListener("click", event => {
         listening ? stop() : start();
     });
